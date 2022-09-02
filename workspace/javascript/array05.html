@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<script>
+	alert("로또 번호 자동 생성기");
+	alert("1게임 - 1000원 최대 5게임까지");
+	document.write("========Lotto6/45========<br>");
+	//금액 입력 받기, 1000~50000 사이 수가 아니면 재입력
+	for(var a=1;a<2;a++){
+		var money=parseInt(prompt("금액을 입력하세요.(1000~50000)"));
+		if(money<1000){
+			alert("금액이 부족합니다.");
+			a--;
+		}else if(money>50000){
+			alert("금액을 초과했습니다.");
+			a--;
+		}
+	}
+	//var money=5000;
+	//횟수 입력 받기
+	// 금액이 부족하면 부족하다고 알림 메세지 날리기
+	var try_=parseInt(prompt("몇 번을 하실건지 작성하세요.(최대 5번)"));
+	//var try_=5;
+	//난수 생성
+	var lottoNums=[];
+	var lottoNums2=[];
+	for(var i=1;i<=45;i++){
+		lottoNums[i-1]=i;
+	}	
+	console.log(lottoNums);
+	for(var l=1;l<=try_;l++){
+		//게임 횟수가 5회 초과
+		document.write(l+" . ");
+		if(try_>5){
+			alert("최대 5게임까지 가능합니다.");
+			document.write("<br>======================");
+			document.write("<br>게임 수 : "+try_);
+			document.write("<br>최대 5게임까지 가능합니다.");
+			break;
+		}//금액이 부족할 시
+		else if(try_>(money/1000)){
+		alert("금액 부족");
+		document.write("금액 부족 : "+((try_*1000)-money)+"원");
+		document.write("<br>======================");
+		document.write("<br>");
+		break;
+		}//로또 번호 추첨
+		else if(try_>0&&try_<6){
+			for(var j=1;j<=180;j++){
+				var rand=parseInt(Math.random()*45);
+				var temp = lottoNums[0];
+				lottoNums[0]=lottoNums[rand];
+				lottoNums[rand]=temp;
+			}
+				for(var k=1;k<=6;k++){
+					lottoNums2[k-1]=lottoNums[k-1];
+					if(lottoNums2[k-1]<10){
+						document.write("[0"+lottoNums2[k-1]+"] ");
+					}else{
+						document.write("["+lottoNums2[k-1]+"] ");
+					}
+				}
+				document.write("<br>");
+			}	
+		}
+		
+	document.write("<br>======================");
+	document.write("<br>거스름 돈 : "+(money-1000*try_)+"원");
+	document.write("<br>금액 : "+money+"원");
+	document.write("<br>======================");
+	document.write("<br>게임 수 : "+try_);
+</script>
+</body>
+</html>

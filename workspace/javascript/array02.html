@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<script>
+	var scores=[];
+	var result;
+	
+	var std=parseInt(prompt("학생 수를 입력하시오"));
+	
+	for(i=0;i<std;i++){
+		scores[i]=parseInt(prompt((i+1)+"번 학생의 점수를 입력하세요."));
+		if(scores[i]>=60&&scores[i]<=100){
+			result="(PASS)";
+		}else if(scores[i]>=0&&scores[i]<60){
+			result="(FAIL)";
+		}
+		document.write((i+1)+"번 학생 : "+scores[i]+result+"<hr>");
+	}
+</script>
+</body>
+</html>

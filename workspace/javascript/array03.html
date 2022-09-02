@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<script>
+	var nums=[];
+	
+	for(i=1;i<=45;i++){
+		nums[i-1]=i;
+	}
+	
+	for(j=1;j<=90;j++){
+	var rand=parseInt(Math.random()*45);
+	//0~44까지 랜덤 숫자를 rand에 저장
+	var temp=nums[0];
+	//nums 배열에 첫번째 수를 temp에 저장
+	nums[0]=nums[rand];
+	//nums 배열에 첫번째 수에 nums[rand]위치의 숫자를 저장
+	nums[rand]=temp;
+	//nums[rand]위치에 temp에 저장한 첫번째 위치의 수를 저장
+	}
+	
+	for(k=0;k<6;k++){
+		document.write(nums[k]+ " " );
+	}
+	console.log(nums);
+</script>
+</body>
+</html>

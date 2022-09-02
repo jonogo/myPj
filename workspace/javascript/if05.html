@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+<script>
+	var score=parseInt(prompt("점수를 입력하시오"));
+	console.log(score);
+	//한 번에 하나씩만 받을 수 있다.
+	if((90<=score)&&(score<=100)){
+		document.write("A학점 입니다.");
+	}else if((80<=score)&&(score<90)){
+		document.write("B학점 입니다.");
+	}else if((70<=score&&score<80)){
+		document.write("C학점 입니다.");
+	}else if((60<=score)&&(score<70)){
+		document.write("D학점 입니다.");
+	}else if((0<=score)&&(score<60)){
+		document.write("F학점 입니다.");
+	}else{
+		document.write("잘못 입력하셨습니다.");
+	}
+</script>
+</body>
+</html>

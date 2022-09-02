@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+	<table border="1" width="300">
+		<tr>
+			<th>User</th>
+			<th>Result</th>
+			<th>Computer</th>
+		</tr>
+		<tr>
+			<td><img id="InputUser"></img></td>
+			<td><img id="Result"></img></td>
+			<td><img id="Computer"></img></td>
+		</tr>
+	</table>
+<script>
+	var num = prompt("가위/바위/보");
+	var InputUser;
+	
+	
+	switch(num){
+		case "가위":
+		InputUser="../html/image/scissors.png";
+		break;
+		case "바위":	
+		InputUser="../html/image/rock.png";
+		break;
+		case "보":
+		InputUser="../html/image/paper.png";
+		break;
+		default :
+		break;
+	}
+	
+	var num1 = parseInt(Math.random()*3);
+	//var num1 =0;
+	var comImage;
+	
+	switch(num1){
+		case 0:
+		comImage="../html/image/scissors.png";
+		break;
+		case 1:	
+		comImage="../html/image/rock.png";
+		break;
+		case 2:
+		comImage="../html/image/paper.png";
+		break;
+		default :
+		break;
+	}
+	
+	if(num=="가위"&&num1==0){
+		document.getElementById("Result").src="../html/image/draw.png";
+	}
+	if(num=="가위"&&num1==1){
+		document.getElementById("Result").src="../html/image/lose.png";
+	}
+	if(num=="가위"&&num1==2){
+		document.getElementById("Result").src="../html/image/win.jpg";
+	}
+	
+	if(num=="바위"&&num1==0){
+		document.getElementById("Result").src="../html/image/win.jpg";
+	}
+	if(num=="바위"&&num1==1){
+		document.getElementById("Result").src="../html/image/draw.png";
+	}
+	if(num=="바위"&&num1==2){
+		document.getElementById("Result").src="../html/image//lose.png";
+	}
+	
+	if(num=="보"&&num1==0){
+		document.getElementById("Result").src="../html/image/lose.png";
+	}
+	if(num=="보"&&num1==1){
+		document.getElementById("Result").src="../html/image/win.jpg";
+	}
+	if(num=="보"&&num1==2){
+		document.getElementById("Result").src="../html/image/draw.png";
+	}
+	
+	
+	document.getElementById("InputUser").src=InputUser;
+	document.getElementById("Computer").src=comImage;
+</script>
+</body>
+</html>

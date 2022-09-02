@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+
+<script>
+	var userInput=parseInt(prompt("숫자를 입력하세요"));
+	var sum1=0;
+	var sum2=0;
+	var sum3=0;
+	console.log(userInput);
+	for(i=1;i<=userInput;i++){
+		if(i%2==0){
+			sum1+=i;
+		}else{
+			sum2+=i;
+		}
+		sum3+=i;
+	}
+	document.write("입력한 숫자 : ",userInput,"<br>홀수의 합 : ",sum2,"<br>짝수의 합 : ",sum1,"<br>전체 합 : ",sum3);
+</script>
+</body>
+</html>

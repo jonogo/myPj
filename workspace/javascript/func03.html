@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+	<table border="1" width="300" height="200">
+		<tr>
+			<th ><button type="button" onclick="a1();">+</button></th>
+			<th id="addResult"></th>
+		</tr>
+		<tr>
+			<th><button type="button" onclick="a2();">-</button></th>
+			<th id="subResult"></th>
+		</tr>
+		<tr>
+			<th><button type="button" onclick="a3();">*</button></th>
+			<th id="a3Result"></th>
+		</tr>
+		<tr>
+			<th><button type="button" onclick="a4();">/</button></th>
+			<th id="a4Result"></th>
+		</tr>
+		<tr>
+			<th><button type="button" onclick="a5();">%</button></th>
+			<th id="a5Result"></th>
+		</tr>
+	</table>
+<script>
+	var x = prompt("x 수를 입력하시오.");
+	var y = prompt("y 수를 입력하시오.");
+	
+	var xn = parseInt(x);
+	var yn = parseInt(y);
+	
+	function a1()
+		{
+			a=xn+yn;
+			document.getElementById("addResult").innerHTML=a;
+			return a;
+		}
+			function a2()
+		{
+			a=xn-yn;
+			document.getElementById("subResult").innerHTML=a;
+			return a;
+		}
+			function a3()
+		{
+			a=xn*yn;
+			document.getElementById("a3Result").innerHTML=a;
+			return a;
+		}
+			function a4()
+		{
+			a=xn/yn;
+			document.getElementById("a4Result").innerHTML=a;
+			return a;
+		}
+			function a5()
+		{
+			a=xn%yn;
+			document.getElementById("a5Result").innerHTML=a;
+			return a;
+		}
+</script>
+</body>
+</html>

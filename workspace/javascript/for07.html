@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+
+
+<script>
+	/*var a = 2;
+	for(var i=2;i<=9;i++){
+		for(var j=1;j<=9;j++){
+		document.write(a+"*"+j+"="+(a*j)+"<br>");
+		}
+		a++;
+	}*/
+	document.write("<table border='1' width='600'>");
+	var a=2; //단
+	for(var i=1;i<=2;i++){
+		document.write("	<tr>");
+			for (var k = 2; k <=5; k++) {
+				document.write("<td>");
+				for (var l = 1; l <= 9; l++) {
+					document.write(a + " x " + l + " = " + (a*l) + "<br>");
+				}
+				a++;
+				document.write("</td>");		
+			}
+		document.write("	</tr>");
+	}
+	document.write("</table>");
+	
+</script>
+</body>
+</html>

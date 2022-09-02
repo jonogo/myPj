@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+
+	<script>
+		var v;
+		console.log(v);
+		console.log("v");
+		v=1;
+		console.log(v);
+		v=2;
+		console.log(v);
+		
+		// 연산자 - 단항 연산자, 이항 연산자, 삼항 연산자
+		// 
+		var x= 7; 
+		var y=3;
+		console.log(x+y);
+		console.log(x-y);
+		console.log(x*y);
+		console.log(x/y);
+		console.log(x%y);
+		
+		var a=1; var b=2; var c=3;
+		
+		//+에서 주의 사항
+		//글자와의 + 연산 -> 연결
+		var a= "100";
+		var b= 200;
+		//"100"+200 ->"100"+"200" = 100200
+		console.log(a+b);
+		
+		//글자 값을 숫자로 바꾸기
+		var c = parseInt(a)+b;
+		console.log(c);
+		//사용자 입력에 대해서는 숫자 값이라도 글자로 처리됨.
+		
+		var d=0;
+		d++;
+		console.log(d);
+		d--;
+		console.log(d);
+		
+		var num = prompt("숫자 입력");
+		console.log(num+200);
+	</script>
+</body>
+</html>

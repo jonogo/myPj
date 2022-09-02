@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+</head>
+<body>
+	<table border="1" width="300">
+		<tr>
+			<th>User</th>
+			<th>Result</th>
+			<th>Computer</th>
+		</tr>
+		<tr>
+			<td><img id="InputUser"></img></td>
+			<td><img id="Result"></img></td>
+			<td><img id="Computer"></img></td>
+		</tr>
+	</table>
+<script>
+//-------------------------------------------------유저부분
+	var num = prompt("가위/바위/보");
+	var InputUser;
+	
+	switch(num){
+		case "가위":
+		InputUser="../html/image/scissors.png";
+		break;
+		case "바위":	
+		InputUser="../html/image/rock.png";
+		break;
+		case "보":
+		InputUser="../html/image/paper.png";
+		break;
+		default :
+		break;
+	}
+	//---------------------------------------------컴퓨터 부분
+	var num1 = parseInt(Math.random()*3);
+	var comRps;
+	//var num1 =0;
+	var comImage;
+	
+	switch(num1){
+		case 0:
+		comImage="../html/image/scissors.png";
+		comRps="가위";
+		break;
+		case 1:	
+		comImage="../html/image/rock.png";
+		comRps="바위";
+		break;
+		case 2:
+		comImage="../html/image/paper.png";
+		comRps="보";
+		break;
+		default :
+		break;
+	}
+	//-------------------------------------------------결과 부분
+	var Result;
+	
+	
+	if(num==comRps){
+		Result="../html/image/draw.png";
+	}else{
+		if(num=="가위"){
+			if(comRps=="바위"){
+			Result="../html/image/lose.png";
+			}else if(comRps=="보"){
+				Result="../html/image/win.jpg";
+			}
+		}else if(num=="바위"){
+			if(comRps=="가위"){
+				Result="../html/image/win.jpg";
+			}else if(comRps=="보"){
+				Result="../html/image/lose.png";
+			}
+		}else if(num=="보"){
+			if(comRps=="가위"){
+				Result="../html/image/lose.png";
+			}else if(comRps=="바위"){
+				Result="../html/image/win.jpg";
+			}
+		}
+	}
+	/*switch(num){
+	//가위를 냈을 때
+		case "가위":
+		if(num1==0){
+			Result="../html/image/draw.png";
+			break;
+		}else if(num1==1){
+			Result="../html/image/lose.png";
+			break;
+		}else if(num1==2){
+			Result="../html/image/win.jpg";
+			break;
+		}
+		break;
+	//바위를 냈을 때
+		case "바위":
+		if(num1==0){
+			Result="../html/image/win.jpg";
+			break;
+		}else if(num1==1){
+			Result="../html/image/draw.png";
+			break;
+		}else if(num1==2){
+			Result="../html/image/lose.png";
+			break;
+	//보자기를 냈을 때;
+		}case "보":
+		if(num1==0){
+			Result="../html/image/lose.png";
+			break;
+		}else if(num1==1){
+			Result="../html/image/win.jpg";
+			break;
+		}else if(num1==2){
+			Result="../html/image/draw.png";
+			break;
+		}
+		break;
+	}*/
+	document.getElementById("InputUser").src=InputUser;
+	document.getElementById("Computer").src=comImage;
+	document.getElementById("Result").src=Result;
+</script>
+</body>
+</html>
